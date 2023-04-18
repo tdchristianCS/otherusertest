@@ -38,3 +38,21 @@ Team A
 
 # =====
 
+# team a and b's 3, 2, and 1-pointers
+a3 = int(input('Enter Team A\'s 3 pointers: '))
+a2 = int(input('Enter Team A\'s 2 pointers: '))
+a1 = int(input('Enter Team A\'s 1 pointers: '))
+
+b3 = int(input('Enter Team B\'s 3 pointers: '))
+b2 = int(input('Enter Team B\'s 2 pointers: '))
+b1 = int(input('Enter Team B\'s 1 pointers: '))
+
+a_total = (a3 * 3) + (a2 * 2) + (a1)
+b_total = (b3 * 3) + (b2 * 2) + (b1)
+
+if a_total > b_total:
+    print('Team A wins')
+elif b_total > a_total:
+    print('Team B wins')
+elif a_total == b_total:
+    print('Tie')
