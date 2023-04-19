@@ -10,3 +10,6 @@
 
 # ====
 
+temp = float(input('Enter your temp in Fahrenheit: '))
+temp = (temp - 32) * 5/9
+print(temp)
