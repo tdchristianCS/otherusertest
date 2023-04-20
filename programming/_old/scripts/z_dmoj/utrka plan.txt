@@ -1,0 +1,96 @@
+read the number of contestants
+
+make an empty list for registered
+make an empty list for finished
+
+read all the registered and put them in the list
+read all the finished and put them in the list
+
+go through all the registered
+if any are not in finished
+that's the person; print them
+
+====
+
+let's try test cases
+
+3
+jack
+nancy
+uther
+jack
+nancy
+
+[jack, nancy, uther]
+[jack, nancy]
+uther
+
+----
+
+3
+jack
+nancy
+jack
+jack
+nancy
+
+[jack, nancy, jack]
+[jack, nancy]
+
+!!!!!
+
+----
+
+instead....
+create dictionaries instead of lists for registered and finished
+keys are names, values are # of times it occurs
+compare each name, and if the value is not the same
+that's the name
+
+====
+
+read the number of contestants
+
+make an empty dict for registered
+make an empty dict for finished
+
+read all the registered and enter them in the dict
+	first time, set to 1
+	after, add 1
+
+read all the finished and enter them in the dict
+	first time, set to 1
+	after, add 1
+
+go through all the registered names
+if that name in finished doesn't have the same value as in registered
+that's the person; print them
+
+====
+
+let's try test cases
+
+3
+jack
+nancy
+uther
+jack
+nancy
+
+{jack: 1, uther: 1, nancy: 1}
+{jack: 1, nancy: 1}
+uther
+
+----
+
+3
+jack
+nancy
+jack
+jack
+nancy
+
+{jack: 2, nancy: 1}
+{jack: 1, nancy: 1}
+
+''

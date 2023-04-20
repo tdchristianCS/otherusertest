@@ -1,0 +1,40 @@
+We can construct various other sentences using
+just "and", "or", and "not"
+
+
+"both of them"
+kathy and rona
+
+"at least one person"
+kathy or rona
+
+"anyone but kathy"
+not kathy
+
+"anyone but rona"
+not rona
+
+"kyle, paul, and daniel"
+kyle and paul and daniel
+
+"either kyle alone, or paul and daniel together"
+kyle or paul and daniel
+
+"either kyle or paul, but daniel must be there"
+(kyle or paul) and daniel
+
+"only one of them"
+(kathy or rona) and not (kathy and rona)
+
+"any two of kyle, paul, and daniel"
+(kyle and paul) or (kyle and daniel) or (daniel and paul)
+
+"any two of kyle, paul, and daniel BUT NOT ALL THREE"
+(
+ (kyle and paul)   or
+ (kyle and daniel) or
+ (daniel and paul)
+)
+and not (kyle and paul and daniel)
+
+

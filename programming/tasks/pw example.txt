@@ -1,0 +1,11 @@
+password = input('Choose a password:')
+
+# contains at least 1 uppercase
+
+has_upper = False
+for char in password:
+    if char.isupper():
+        has_upper = True
+
+if not has_upper:
+    print('No uppercase found')

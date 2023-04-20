@@ -1,0 +1,17 @@
+Joyce,Taurus
+Meagan,Pisces
+Risa,Scorpio
+Sharon,Leo
+Matt,Gemini
+Karim,Sagittarius
+Anthony,Sagittarius
+Daniel,Sagittarius
+Calum,Virgo
+Jacob,Aries
+Mickey,Gemini
+Josh E,Virgo
+Josh C,Sagittarius
+Lazar,Aquarius
+Nathan,Capricorn
+Jack,Scorpio
+Joseph,Virgo

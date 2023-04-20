@@ -1,0 +1,8 @@
+input phase
+logic phase
+output phase
+
+
+input:  'problem one is really long'
+logic:  count the words in that input...
+output: 5

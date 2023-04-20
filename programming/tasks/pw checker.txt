@@ -1,0 +1,20 @@
+Challenge: Write a password checker.
+
+It must take in input from the user for a potential password.
+
+You have to print whether it is a valid password or not.
+
+A valid password...
+
+-- Is it at least 8 characters long
+-- Contains at least
+		1 symbol
+		1 uppercase letter
+		1 lowercase letter
+		1 number
+-- Does not contain...
+		Their birthday, which is '1991-12-05'
+		Their pet's name, which is 'Fido'
+
+Hint: Could you make a function for each of those three things,
+plus a fourth function that runs the other three?
