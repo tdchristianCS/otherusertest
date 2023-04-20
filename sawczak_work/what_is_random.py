@@ -7,7 +7,7 @@ import random
 # The most useful 3...
 
 # random.choice picks a random item from a container
-names = ['Sean', 'Jean', 'Dean']
+names = ['Sean', 'Jean', 'Dean', 'Brian', 'Ryan']
 print(random.choice(names))
 
 # random.shuffle shuffles the order of items in a container
