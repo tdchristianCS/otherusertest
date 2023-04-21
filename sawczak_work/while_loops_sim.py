@@ -15,7 +15,7 @@ import random
 # they are not intended to change during execution
 # these are like your "settings" for the game
 
-POPULATION = 15_000
+POPULATION = 1_500_000
 MAX_PLAYERS = POPULATION * 2/3
 INITIAL_PLAYERS = 1
 
@@ -23,7 +23,7 @@ INITIAL_PLAYERS = 1
 # try changing these to see how it affects the game duration
 SPREAD_FACTOR_1 = 5
 SPREAD_FACTOR_2 = 2
-SPREAD_FACTOR_3 = 4
+SPREAD_FACTOR_3 = 3 # should be between 1 and SPREAD_FACTOR_1
 
 # normal variables are the ones that change
 # we initialize these at 0
