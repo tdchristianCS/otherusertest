@@ -27,6 +27,17 @@ for char in name:
 
 print(f'Sanitized name: {sanitized}')
 
+# =============================================================================
+
 # Filtering 3
 # Adapt the above so only vowels are sanitary
 
+name = input('Enter name: ')
+vowels = 'aeiou'
+sanitized = ''
+
+for char in name:
+    if char.lower() in vowels:
+        sanitized = sanitized + char
+
+print(f'Sanitized name: {sanitized}')
