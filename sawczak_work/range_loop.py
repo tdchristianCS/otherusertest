@@ -10,9 +10,29 @@ for i in range(5):
 
 # =============================================================================
 
-# # # for i in range loop to access specific items
+# Seeing how the loop variable (i) changes
 
-# # # e.g. every other item
+for i in range(5):
+    print(i)
+
+# =============================================================================
+
+# Also you can start elsewhere than 0 -- this may be easier to understand
+# as a parallel of string/list slices
+
+for i in range(0, 5):
+    print(i)
+
+# Start anywhere
+
+for i in range(3, 7):
+    print(i)
+
+# =============================================================================
+
+# for i in range loop to access specific items
+
+# e.g. every other item
 text = input('Enter some text to make crazy: ')
 crazy_text = ''
 
@@ -33,16 +53,16 @@ print(crazy_text)
 # # make a string consisting of only every 3 letter, starting from 0
 # # e.g. 'abcdefghijk' -> 'adgj'
 
-# text = input('Enter some text to keep only 3rd letter: ')
-# third_letters = ''
+text = input('Enter some text to keep only 3rd letter: ')
+third_letters = ''
 
-# for i in range(len(text)):
+for i in range(len(text)):
 
-#     # only keep divisible by 3
-#     if i % 3 == 0:
-#         third_letters += text[i]
+    # only keep divisible by 3
+    if i % 3 == 0:
+        third_letters += text[i]
     
-# # print(third_letters)
+print(third_letters)
 
 # =============================================================================
 
@@ -64,13 +84,24 @@ print(spaces)
 
 # Using range loop to compare parallel strings
 
-prompt = 'import os'
+prompt = 'dinosaurs'
 attempt = input(f'Type: {prompt}\n    : ')
 
 for i in range(len(attempt)):
+
+    if len(prompt) < i:
+        # Why is this necessary to avoid an error?
+        print('Prompt is shorter than attempt')
+        break
+
+    # report on what's happening
+    # print(f'\nindex {i}\n{attempt[i]} vs. {prompt[i]}')
+    # input()
 
     if attempt[i] != prompt[i]:
         print(f'Mistake found at {i}')
         break # ends the loop
 
-print('No mistakes found')
+# for / else: else runs only if 'break' did not run
+else:
+    print('No mistakes found')
