@@ -29,7 +29,7 @@ for i in range(len(name)):
 for i in range(26):
     print(chr(i + 65))
 
-# now combine letters and numbers
+# # now combine letters and numbers
 
 for i in range(3):
     letter = chr(i + 65)
@@ -39,7 +39,7 @@ for i in range(3):
 
         print(f'{letter}{number}')
 
-# third level of nesting???
+# # third level of nesting???
 
 for i in range(26):
     letter_1 = chr(i + 65)
@@ -63,10 +63,19 @@ for i in range(26):
 'aa'
 'nnn'
 
+for i in range(len(name)):
+    print(name[i] * (i + 1))
+
+# name = input('Enter your name: ')
+name = 'Dan'
+
 # Your job #1:
 'nnn'
 'aa'
 'D'
+
+for i in range(len(name)):
+    print(name[len(name) - i - 1] * (len(name) - i))
 
 # Your job #2:
 'D'
@@ -74,3 +83,18 @@ for i in range(26):
 'nnn'
 'aa'
 'D'
+
+# 
+
+for i in range(len(name) - 1):    # -1 allows us to avoid printing 'nnn' twice
+    print(name[i] * (i + 1))
+for i in range(len(name)):
+    print(name[len(name) - i - 1] * (len(name) - i))
+
+# right-aligned?? use spaces
+
+name = 'Daniel'
+for i in range(len(name)):
+    spaces = ' ' * (len(name) - (i + 1))
+    letters = name[i] * (i + 1)
+    print(f'{spaces}{letters}')
