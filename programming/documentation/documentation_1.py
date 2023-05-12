@@ -17,3 +17,7 @@ def mystery(a):
             b.append(c)
 
     return b
+
+# Testing area
+a = None # Change once you understand the required type
+print(mystery(a))

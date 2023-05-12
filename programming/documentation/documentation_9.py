@@ -24,3 +24,8 @@ def miss_turry(a, b):
             e.append(f)
 
     return e
+
+# Testing area
+a = None # Change once you understand the required type
+b = None # Change once you understand the required type
+print(miss_turry(a, b))

@@ -13,3 +13,8 @@ def mister_e(a, b):
     d = len(b) // 2
     e = a[:c] + b[d:]
     return e.title()
+
+# Testing area
+a = None # Change once you understand the required type
+b = None # Change once you understand the required type
+print(mister_e(a, b))

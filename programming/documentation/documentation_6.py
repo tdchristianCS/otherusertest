@@ -15,3 +15,8 @@ def mistaree(a, b):
         return 1
     else:
         return 0
+
+# Testing area
+a = None # Change once you understand the required type
+b = None # Change once you understand the required type
+print(mistaree(a, b))

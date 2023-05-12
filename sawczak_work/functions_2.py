@@ -12,6 +12,9 @@ try:
 except:
     PROGRESS_BAR = False
 
+RNG_LIMIT = 2 ** 16
+LEN_CWD = len(os.getcwd())
+
 def rng() -> int:
     """
     Return a random number up to 2 ** 16.
@@ -31,7 +34,7 @@ def rng() -> int:
     rn *= mult
 
     # limit it to 2**16
-    rn = rn % (2 ** 16)
+    rn = rn % RNG_LIMIT
 
     return round(rn)
 
@@ -45,19 +48,21 @@ def rng_between(lower: int, upper: int) -> int:
     # We can just reuse our base rn function
     rn = rng()
 
+    upper += 1
+
     # This seems to work but very often gives even numbers
     # rn = rn % upper
     # if rn < lower:
     #     rn += lower
 
     # Scale it to between 0...1 by dividing it by its maximum value
-    zero_to_one = rn / (2 ** 16)
+    zero_to_one = rn / RNG_LIMIT
 
     # Scale it to lower...upper bounds via this math
     scaled = zero_to_one * (upper - lower)
     scaled = scaled + lower
 
-    return round(scaled)
+    return int(scaled)
 
 def rng_choose(L: list) -> object:
     """
@@ -83,7 +88,7 @@ def get_n2() -> int:
     Return a random integer based on the current working directory
     and time.
     """
-    return len(os.getcwd()) * get_n1()
+    return LEN_CWD * get_n1()
 
 def test_randomness(rng_function: callable) -> None:
     """
@@ -97,12 +102,9 @@ def test_randomness(rng_function: callable) -> None:
     # each number appears
     frequencies = {}
 
-    n_trials = 1_000_000
-    update_every = n_trials // 10
-
-    if PROGRESS_BAR:
-        update_every //= 10
-        bar = ChargingBar('Progress', max=(n_trials // update_every))
+    n_trials = 10_000_000
+    update_every = n_trials // 100
+    bar = ChargingBar('Progress', max=(n_trials // update_every))
 
     for i in range(n_trials):
         rn = rng_function(1, 10)
@@ -116,11 +118,7 @@ def test_randomness(rng_function: callable) -> None:
 
         # little progress report for the longer trials...
         if (i + 1) % update_every == 0:
-            if PROGRESS_BAR:
-                bar.next()
-            else:
-                progress = round(i / n_trials * 100)
-                print(f'Generated {progress}% of the random numbers...')
+            bar.next()
     
     # Sort the numbers and print the % of each one
     print()

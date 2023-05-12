@@ -13,3 +13,7 @@ def missed_ri(a):
         print('x' * i)
     for i in range(1, a):
         print((' ' * (a - i)) + ('x' * i))
+
+# Testing area
+a = None # Change once you understand the required type
+print(missed_ri(a))

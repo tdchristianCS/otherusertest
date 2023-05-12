@@ -16,4 +16,8 @@ def myst_ri(a):
             b = True
         elif d.islower():
             c = True
-    return b and c
+    return b or c
+
+# Testing area
+a = None # Change once you understand the required type
+print(myst_ri(a))
