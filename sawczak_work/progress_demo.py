@@ -1,3 +1,7 @@
+# To use this, run in the terminal:
+# pip install progress
+# (may have to make sure your interpreter in VSCode matches the version of Python in your terminal)
+
 from progress.bar import ChargingBar
 import time
 
