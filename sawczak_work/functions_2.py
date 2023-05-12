@@ -23,7 +23,7 @@ def rng() -> int:
     n1 = get_n1()
     n2 = get_n2()
 
-    rn *= (n1 * math.pi)
+    rn *= (1 + (n1 * math.pi))
 
     # turn that into a string, and take the part after the period
     s_rn = str(rn).replace('.', '').replace('-', '')
@@ -31,7 +31,7 @@ def rng() -> int:
     # get an index in that string to multipy the number by
     i = n2 % 10
     mult = int(s_rn[i])
-    rn *= mult
+    rn *= (1 + mult)
 
     # limit it to 2**16
     rn = rn % RNG_LIMIT
@@ -102,9 +102,15 @@ def test_randomness(rng_function: callable) -> None:
     # each number appears
     frequencies = {}
 
-    n_trials = 10_000_000
-    update_every = n_trials // 100
-    bar = ChargingBar('Progress', max=(n_trials // update_every))
+    n_trials = 1_000_000
+
+    # Update every 10% of the way
+    update_every = n_trials // 10
+
+    if PROGRESS_BAR:
+        # If using a progress bar, update every 1% of the way
+        update_every = update_every // 10
+        bar = ChargingBar('Progress', max=(n_trials // update_every))
 
     for i in range(n_trials):
         rn = rng_function(1, 10)
@@ -118,7 +124,11 @@ def test_randomness(rng_function: callable) -> None:
 
         # little progress report for the longer trials...
         if (i + 1) % update_every == 0:
-            bar.next()
+            if PROGRESS_BAR:
+                bar.next()
+            else:
+                fraction = (i + 1) / n_trials * 100
+                print(f'Generated {fraction}% of the random numbers')
     
     # Sort the numbers and print the % of each one
     print()
